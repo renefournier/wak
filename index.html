@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Wak!</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="author" content="René" />
+    <meta name="description" content="Wak!" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      html {
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        margin: 0;
+        padding: 10px;
+      }
+
+      .container {
+        width: calc(100vw - 20px);
+        height: calc(100vh - 20px - 70px);
+        height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+        height: calc(var(--vh, 1vh) * 100 - 110px);
+
+        display: grid;
+        grid-gap: 10px;
+        background-color: #fff;
+        color: #444;
+        grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+      }
+
+      .box {
+        /* background-color: #444; */
+        color: rgba(255, 255, 255, 1);
+        border-radius: 5px;
+        padding: 20px;
+        font-size: 200%;
+        font-weight: bold;
+        text-align: center;
+        user-select: none;
+        /* Likely future */
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #afafaf;
+      }
+
+      .box.win {
+        background: rgb(60, 111, 58);
+      }
+
+      .box.lose {
+        background: rgb(255, 111, 111);
+      }
+
+      #stats .win {
+        color: rgb(60, 111, 58);
+      }
+
+      #stats .lose {
+        color: rgb(255, 111, 111);
+      }
+
+      #footer {
+        column-count: 3;
+        /* height: 100px; */
+        /* border: 1px solid red; */
+        margin-top: 20px;
+      }
+
+      #username {
+        /* width: calc(100% - 20px); */
+        font-size: 1.5rem;
+        border-radius: 5px;
+        background: #f9f9f9;
+        border: 1px solid #d1d1d1;
+        padding: 5px 10px;
+        box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);
+        outline: none;
+        -webkit-transition: 0.18s ease-out;
+        -moz-transition: 0.18s ease-out;
+        -o-transition: 0.18s ease-out;
+        transition: 0.18s ease-out;
+      }
+
+      ::placeholder {
+        color: #e6e6e6;
+      }
+
+      #rounds {
+        /* width: calc(100% - 20px); */
+        font-size: 1.5rem;
+        height: 30px;
+        text-align: center;
+        color: #aaa;
+        /* background-color: red; */
+        /* border: 1px solid green; */
+      }
+
+      #people {
+        /* width: calc(100% - 20px); */
+        font-size: 1.5rem;
+        height: 30px;
+        text-align: center;
+        color: #aaa;
+      }
+
+      #stats {
+        /* width: calc(100% - 20px); */
+        font-size: 1.5rem;
+        height: 30px;
+        text-align: center;
+        /* border: 1px solid green; */
+      }
+
+      .grid-container {
+        display: grid;
+        /* grid-template-columns: 25% 25% 25% 25%; */
+        grid-template-columns: 1fr 1fr 1fr 2fr;
+        grid-gap: 10px;
+      }
+
+      .grid-item {
+        /* border: 1px solid #aaa; */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="b0" class="box a0" style="opacity: 1"></div>
+      <div id="b1" class="box a1" style="opacity: 1"></div>
+      <div id="b2" class="box a2" style="opacity: 1"></div>
+
+      <div id="b3" class="box b0" style="opacity: 1"></div>
+      <div id="b4" class="box b1" style="opacity: 1"></div>
+      <div id="b5" class="box b2" style="opacity: 1"></div>
+
+      <div id="b6" class="box c0" style="opacity: 1"></div>
+      <div id="b7" class="box c1" style="opacity: 1"></div>
+      <div id="b8" class="box c2" style="opacity: 1"></div>
+
+      <div id="b9" class="box d0" style="opacity: 1"></div>
+      <div id="b10" class="box d1" style="opacity: 1"></div>
+      <div id="b11" class="box d2" style="opacity: 1"></div>
+    </div>
+    <div id="footer" class="grid-container">
+      <div class="grid-item">
+        <input id="username" type="text" placeholder="Anonymous" value="" />
+      </div>
+      <div id="rounds" class="grid-item"></div>
+      <div id="people" class="grid-item"></div>
+      <div id="stats" class="grid-item"></div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="/wak/dist/main.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-139457527-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-139457527-1");
+    </script>
+  </body>
+</html>

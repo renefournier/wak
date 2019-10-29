@@ -1,0 +1,21 @@
+{
+  "name": "wak",
+  "version": "1.0.0",
+  "description": "",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "webpack --mode development",
+    "build:prod": "webpack --mode production",
+    "start:dev": "webpack-dev-server --mode development --inline 'false'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "dependencies": {}
+}
